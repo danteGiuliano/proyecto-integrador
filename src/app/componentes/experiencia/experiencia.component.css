@@ -1,0 +1,7 @@
+.background{
+    background-color: var(--main-color);
+}
+.tamaño{
+    max-height: 100px;
+    max-width: 100px;
+}

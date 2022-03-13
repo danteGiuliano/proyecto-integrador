@@ -1,0 +1,13 @@
+.banner{
+    width: 90%;
+    border-radius: 3px;
+    height: 350px ;
+    margin-top:5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index:-1;
+    box-shadow: 3px 3px 2px #546e7a;
+}
+.backGround{
+    background:linear-gradient(180deg,var(--main-color ),transparent);
+}

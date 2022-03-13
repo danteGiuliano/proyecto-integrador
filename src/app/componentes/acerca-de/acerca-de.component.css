@@ -1,0 +1,34 @@
+.avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    justify-content: flex-start;
+    object-fit:cover;
+  }
+  .image{
+  width: 100%;
+  margin-top:-20%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-left: 5%;
+   }
+.acerca{
+  position: absolute;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+mat-card{
+  margin-top:5%;
+}
+mat-grid-list{
+  background: linear-gradient(0deg,var(--main-color) 5%,transparent,transparent);
+}
+.background{
+  background-color: var(--main-color);
+}
+.space{
+  height:90px;
+}

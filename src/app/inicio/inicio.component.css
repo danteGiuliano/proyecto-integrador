@@ -1,0 +1,10 @@
+mat-slider {
+    width: 300px;
+  }
+ 
+  .desplazamiento{
+    margin: 0 auto;
+    position: relative;
+    top:-10%;
+    background-color: var(--main-color);
+  }
