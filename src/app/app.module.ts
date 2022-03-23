@@ -11,7 +11,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
-
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { SkillsComponent } from './componentes/skills/skills.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,MaterializeModule
+    BrowserAnimationsModule,MaterializeModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
