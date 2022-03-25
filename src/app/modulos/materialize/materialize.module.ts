@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 //Spinner
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 //Slider
 import {MatSliderModule} from '@angular/material/slider';
@@ -20,12 +21,13 @@ import {MatGridListModule}from '@angular/material/grid-list'
 //Card
 import {MatCardModule} from '@angular/material/card';
 
+
 class library{
  static returnImport(){
   return [MatToolbarModule,
     MatIconModule,MatSliderModule,
     MatProgressSpinnerModule,
-    FormsModule,MatButtonModule,MatGridListModule,MatCardModule]
+    FormsModule,MatButtonModule,MatGridListModule,MatCardModule,NgCircleProgressModule]
  }
 
 }
@@ -33,7 +35,14 @@ class library{
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,NgCircleProgressModule.forRoot({
+      // set defaults here
+      "radius": 60,
+      "outerStrokeWidth": 10,
+      "innerStrokeWidth": 5,
+      "showBackground": false,
+      "startFromZero": false
+    })
   ],exports:[
     library.returnImport()
   ]
