@@ -1,14 +1,24 @@
-
 <div class="center-align" style=" text-transform: uppercase ;margin:0; text-decoration: underline">
     <h1>Educacion</h1>
     <hr>
 </div>
 <div class="blue-grey darken-1" style="padding-top:1%;">
     <div class="container">
-        <div class="row" >
-            <ul class="collection background" >
+        <div class="row">
+            <ul class="collection background">
                 <li class="collection-item avatar" *ngFor="let item of [1,1,1,1,1]">
-                    <img src="../../../assets/logoTutoriasFAI.png" alt="" class="circle">
+                    <!-- Boton para editar borrar el componente -->
+                    <button class="card-title material-icons right 
+              btn-floating btn-small waves-effect waves-light red">
+                        <i class="material-icons">delete</i>
+                    </button><br>
+
+                    <button class="card-title material-icons right 
+               btn-floating btn-small waves-effect waves-light">
+                        <i class="material-icons">edit</i>
+                    </button>
+
+                    <img src="../../../assets/sinfoto.jpg" alt="" class="circle">
                     <span class="title">Title</span>
                     <p>First Line <br>
                         Second Line

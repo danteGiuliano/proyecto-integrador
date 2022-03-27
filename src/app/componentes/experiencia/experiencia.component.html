@@ -1,25 +1,47 @@
-<div class="container"><div class="center-align" style=" text-transform: uppercase ;margin:0; text-decoration: underline" >
-  <h1>Experiencias</h1>
-  <hr>
-</div></div>
-   
-<div class="blue-grey darken-1" style="padding-top:1%;"> 
+<div class="container">
+  <div class="center-align" style=" text-transform: uppercase ;margin:0; text-decoration: underline">
+    <h1>Experiencias</h1>
+    <hr>
+  </div>
+</div>
+<div class="container">
+  <div class="blue-grey darken-1" style="padding-top:1%;">
     <div>
-        <div class="row">
-               <div class=" col m4 card horizontal blue-grey lighten-5 hoverable" *ngFor="let item of [1,1,1,1,1]">
-                 <div class="card-image">
-                   <img src="../../../assets/logoTutoriasFAI.png" class="cirle tamaño">
-                 </div>
-                 <div class="card-stacked">
-                   <div class="card-content">
-                       <span class="card-title">Tutorias | Facultad de informatica</span>
-                     <p>Tutoria universitaria año 2020-actualidad</p>
-                   </div>
-                   <div class="card-action ">
-                     <a href="#" class="blue-text text-darken-2 " >Referencias</a>
-                   </div>
-                 </div>
-               </div>
-           </div>
+      <div class="row">
+        <div class=" col m12 card horizontal blue-grey lighten-5 hoverable" *ngFor="let item of [1,1,1,1,1]">
+
+          <!--Seccion de imagen-->
+          <div class="card-image">
+            <img src="../../../assets/sinfoto.jpg" class="cirle tamaño">
+
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+
+              <!-- Boton para editar borrar el componente -->
+              <button class="card-title material-icons right 
+                      btn-floating btn-large waves-effect waves-light red">
+                <i class="material-icons">delete</i>
+              </button><br>
+
+              <button (click)="openEditMode()" class="card-title material-icons right 
+                       btn-floating btn-large waves-effect waves-light">
+                <i class="material-icons">edit</i>
+              </button>
+
+
+              <!-- Seccion de titulo y lugar de trabajo-->
+
+              <span class="card-title">Titulo Trabajo | Sector de Trabajo
+              </span>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi est dicta
+                nesciunt cumque sequi tempore sapiente facere, illum quibusdam minus minima ipsam</p>
+
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+
+</div>

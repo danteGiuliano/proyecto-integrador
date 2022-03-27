@@ -1,0 +1,19 @@
+#contenedor{
+    width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+}
+label{
+    font-size: 22px;
+    color:#ccc
+}
+input{
+    font-size: 22px;
+    color:#fff
+}
+textarea{
+    font-size: 22px;
+    color:#fff
+}
+button:hover{
+    padding: 0px 40px;
+}
