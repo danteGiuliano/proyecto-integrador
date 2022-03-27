@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 //Spinner
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -20,6 +19,9 @@ import {MatGridListModule}from '@angular/material/grid-list'
 
 //Card
 import {MatCardModule} from '@angular/material/card';
+//Modal
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 class library{
@@ -27,7 +29,7 @@ class library{
   return [MatToolbarModule,
     MatIconModule,MatSliderModule,
     MatProgressSpinnerModule,
-    FormsModule,MatButtonModule,MatGridListModule,MatCardModule,NgCircleProgressModule]
+    FormsModule,MatButtonModule,MatGridListModule,MatCardModule,NgCircleProgressModule,MatDialogModule]
  }
 
 }

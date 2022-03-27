@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { IconsService } from 'src/app/services/icons.service';
+import { LoginComponent } from '../login/login.component';
 
 
 @Component({
@@ -9,10 +11,13 @@ import { IconsService } from 'src/app/services/icons.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public icon:IconsService) {
-
+  constructor(public icon:IconsService,private login:MatDialog) {
+  }
+  open(){
+    this.login.open(LoginComponent);
   }
   ngOnInit(): void {
   }
+  
 
 }
