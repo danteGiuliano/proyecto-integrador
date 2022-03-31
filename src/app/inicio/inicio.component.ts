@@ -8,7 +8,9 @@ import { Component, OnInit,NgModule } from '@angular/core';
 
 export class InicioComponent implements OnInit {
   public value=70;
-  constructor() { }
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
   }
@@ -19,5 +21,7 @@ export class InicioComponent implements OnInit {
 
     return value;
   }
-
+  datepicker(){
+    this.datepicker();
+  }
 }

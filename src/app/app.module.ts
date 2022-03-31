@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterializeModule } from './modulos/materialize/materialize.module';
+import { MaterializeModule } from './modulos/materialize/material.module';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
@@ -14,11 +14,12 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalExperienciaComponent } from './component/modal-experiencia/modal-experiencia.component';
+import { ModalEstudioComponent } from './component/modal-estudio/modal-estudio.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,ModalEstudioComponent,
     HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent
   ],
   imports: [
@@ -26,6 +27,6 @@ import { ModalExperienciaComponent } from './component/modal-experiencia/modal-e
     BrowserAnimationsModule,MaterializeModule,HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,ModalEstudioComponent]
 })
 export class AppModule { }
