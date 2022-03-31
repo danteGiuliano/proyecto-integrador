@@ -13,7 +13,7 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { SkillsComponent } from './componentes/skills/skills.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
-import { ModalExperienciaComponent } from './component/modal-experiencia/modal-experiencia.component'
+import { ModalExperienciaComponent } from './component/modal-experiencia/modal-experiencia.component';
 
 
 @NgModule({

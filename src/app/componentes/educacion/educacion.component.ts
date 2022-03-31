@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalEstudioComponent } from 'src/app/component/modal-estudio/modal-estudio.component';
 
 @Component({
   selector: 'app-educacion',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modal:MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openEditMode(){
+    this.modal.open(ModalEstudioComponent)
+  }
 }

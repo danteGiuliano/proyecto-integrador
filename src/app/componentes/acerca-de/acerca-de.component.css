@@ -5,11 +5,13 @@
     border-radius: 50%;
     justify-content: flex-start;
     object-fit:cover;
+    position: absolute;
+    z-index:1;
   }
   .image{
   width: 100%;
   margin-top:-20%;
-  position: relative;
+  position: inherit;
   overflow: hidden;
   margin: 0 auto;
   margin-left: 5%;
@@ -31,4 +33,10 @@ mat-grid-list{
 }
 .space{
   height:90px;
+}
+editBotton{
+  position: absolute;
+    right: 6%;
+    top: 12%;;
+    z-index: 1;
 }

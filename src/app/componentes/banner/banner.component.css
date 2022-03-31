@@ -11,3 +11,9 @@
 .backGround{
     background:linear-gradient(180deg,var(--main-color ),transparent);
 }
+.editBotton{
+    position: absolute;
+    right: 6%;
+    top: 12%;;
+    z-index: 1;
+}
