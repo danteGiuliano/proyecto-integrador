@@ -15,12 +15,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalExperienciaComponent } from './component/modal-experiencia/modal-experiencia.component';
 import { ModalEstudioComponent } from './component/modal-estudio/modal-estudio.component';
+import { ModalBiografiaComponent } from './component/modal-biografia/modal-biografia.component';
+import { ModalSkillComponent } from './component/modal-skill/modal-skill.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,ModalEstudioComponent,
-    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent
+    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent, ModalBiografiaComponent, ModalSkillComponent
   ],
   imports: [
     BrowserModule,

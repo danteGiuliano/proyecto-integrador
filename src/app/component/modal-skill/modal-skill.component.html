@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col offset-14">
+        <div class="card" id="contenedor">
+            <div class="card-content">
+                <div class="row">
+
+                    <div class="row">
+                        <div class="col s4">
+                            <circle-progress [subtitle]="subtitle"  [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+                            [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+                            [animationDuration]="2000" [percent]="percent"></circle-progress>
+                    </div>
+
+                    <div class="input-field col">
+                        <input type="text" [(ngModel)]="subtitle">
+                        <label for="first_name">Nombre de habilidad</label><br>
+                    </div>
+                    <label for="first_name">Porcentaje</label><br>
+                    <div class="input-field col">
+                        <input type="number" [(ngModel)]="percent">
+                       
+                    </div>
+                </div>
+                <div class="form-field center-align">
+                    <button class="btn-large waves-effect waves-light blue">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
