@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
 import { ModalBiografiaComponent } from 'src/app/component/modal-biografia/modal-biografia.component';
 import { Persona } from 'src/app/interfaces/persona';
+import { ComucacionService } from 'src/app/services/comucacion.service';
 import { DanterestService } from 'src/app/services/danterest.service';
 
 @Component({
@@ -11,12 +11,13 @@ import { DanterestService } from 'src/app/services/danterest.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  public nombre:string="";
   public persona:Persona ={id:1,nombre:"",apellido:"",acerca_de:"",especialidad:""}
-  constructor(private user:DanterestService,private modal:MatDialog) { 
+  constructor(private user:DanterestService,private modal:MatDialog,
+    private comunicacion:ComucacionService) { 
    
   }
   openBibliografiaEditMode(){
+    this.comunicacion.agregarPersona(this.persona)
     this.modal.open(ModalBiografiaComponent)
   }
 

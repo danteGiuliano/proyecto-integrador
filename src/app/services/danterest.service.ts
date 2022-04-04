@@ -12,4 +12,7 @@ export class DanterestService {
   getUsuario():Observable<Persona>{
   return this.api.get<Persona>(this.url+'persona');
   }
+  uptadeUsuario(persona:Persona){
+  this.api.post(this.url+"agregarPersona",persona).subscribe()
+}
 }
