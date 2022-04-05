@@ -4,35 +4,30 @@
         <div class="card-content">
 
             <div class="input-field">
-                <input  id="first_name" type="text" class="validate">
+                <input [(ngModel)]="experiencia.trabajo" id="first_name" type="text" class="validate">
                 <label for="first_name">Trabajo</label>
               </div><br>
 
           <div class="input-field">
-            <input id="first_name" type="text" class="validate">
+            <input [(ngModel)]="experiencia.nombre_empresa" id="first_name" type="text" class="validate">
             <label for="first_name">Lugar de trabajo</label>
           </div><br>
   
           <div class="input-field">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea [(ngModel)]="experiencia.acerca_trabajo" id="textarea1" class="materialize-textarea"></textarea>
             <label for="textarea1">Descripcion del trabajo</label>
           </div><br>
 
-          <form action="#">
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Logo</span>
-                <input type="file">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-          </form><br>
+          <div class="input-field">
+            <input [(ngModel)]="experiencia.url_imagen" id="first_name" type="text" class="validate">
+            <label for="first_name">URL logo</label>
+          </div><br>
         
   
           <div class="form-field center-align">
-           <button class="btn-large waves-effect waves-light blue">Guardar cambios</button>
+           <button (click)="guardarInformacion()"
+           [mat-dialog-close]="experiencia"
+           class="btn-large waves-effect waves-light blue">Guardar cambios</button>
           </div><br>
   
         </div>
