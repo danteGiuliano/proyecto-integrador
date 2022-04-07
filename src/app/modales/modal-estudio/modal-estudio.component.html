@@ -3,52 +3,44 @@
       <div class="card" id="contenedor">
         <div class="card-content">
             <div class="input-field">
-                <input  id="first_name" type="text" class="validate">
+                <input [(ngModel)]="estudio.titulo" id="first_name" type="text" class="validate">
                 <label for="first_name">Capacitacion</label>
               </div><br>
 
           <div class="input-field">
-            <input id="first_name" type="text" class="validate">
+            <input [(ngModel)]="estudio.institucion" type="text" class="validate">
             <label for="first_name">Entidad de la capacitacion</label>
           </div><br>
             <div class="row">
               <div class="col">
                 <mat-form-field appearance="fill">
                   <mat-label>Fecha de inicio</mat-label>
-                  <input matInput [matDatepicker]="picker">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <input [(ngModel)]="estudio.fecha_inicio" matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle date="yyyy" matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="col">
                 <mat-form-field appearance="fill">
                   <mat-label>Fecha de Finalizacion</mat-label>
-                  <input matInput [matDatepicker]="picker2">
+                  <input [(ngModel)]="estudio.fecha_fin" matInput [matDatepicker]="picker2">
                   <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                   <mat-datepicker #picker2></mat-datepicker>
                 </mat-form-field>
               </div>
             </div>
           <div class="input-field">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <textarea [(ngModel)]="estudio.acerca_de" id="textarea1" class="materialize-textarea"></textarea>
             <label for="textarea1">Descripcion del las tareas habilitadas (max 140)</label>
           </div><br>
 
-          <form action="#">
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Logo institucion</span>
-                <input type="file">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-          </form><br>
+          <div class="input-field">
+            <input [(ngModel)]="estudio.url_logo"  type="text" class="validate">
+            <label for="first_name">URL logo</label>
+          </div><br>
         
-  
           <div class="form-field center-align">
-           <button class="btn-large waves-effect waves-light blue">Guardar cambios</button>
+           <button (click)="guardarCambios()" class="btn-large waves-effect waves-light blue">Guardar cambios</button>
           </div>
         </div>
       </div>

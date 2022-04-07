@@ -13,10 +13,10 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { SkillsComponent } from './componentes/skills/skills.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
-import { ModalExperienciaComponent } from './component/modal-experiencia/modal-experiencia.component';
-import { ModalEstudioComponent } from './component/modal-estudio/modal-estudio.component';
-import { ModalBiografiaComponent } from './component/modal-biografia/modal-biografia.component';
-import { ModalSkillComponent } from './component/modal-skill/modal-skill.component';
+import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
+import { ModalEstudioComponent } from './modales/modal-estudio/modal-estudio.component';
+import { ModalBiografiaComponent } from './modales/modal-biografia/modal-biografia.component';
+import { ModalSkillComponent } from './modales/modal-skill/modal-skill.component';
 
 
 @NgModule({

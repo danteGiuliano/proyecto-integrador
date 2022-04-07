@@ -1,6 +1,6 @@
 import { Component,  OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalBiografiaComponent } from 'src/app/component/modal-biografia/modal-biografia.component';
+import { ModalBiografiaComponent } from 'src/app/modales/modal-biografia/modal-biografia.component';
 import { Persona } from 'src/app/interfaces/persona';
 import { ComucacionService } from 'src/app/services/comucacion.service';
 import { DanterestService } from 'src/app/services/danterest.service';

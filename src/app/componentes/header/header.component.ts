@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalExperienciaComponent } from 'src/app/component/modal-experiencia/modal-experiencia.component';
+import { ModalExperienciaComponent } from 'src/app/modales/modal-experiencia/modal-experiencia.component';
 import { IconsService } from 'src/app/services/icons.service';
 import { LoginComponent } from '../login/login.component';
 

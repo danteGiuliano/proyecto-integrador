@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalSkillComponent } from 'src/app/component/modal-skill/modal-skill.component';
+import { ModalSkillComponent } from 'src/app/modales/modal-skill/modal-skill.component';
+import { Skill } from 'src/app/interfaces/skill';
 import { DanterestService } from 'src/app/services/danterest.service';
+import { ComucacionService } from '../../services/comucacion.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,13 +11,18 @@ import { DanterestService } from 'src/app/services/danterest.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-
-  constructor(private service:DanterestService,private modal:MatDialog) { }
+  public skills:Skill[]=[]
+  constructor(private service:DanterestService,private modal:MatDialog,private comunicacion:ComucacionService) { }
 
   ngOnInit(): void {
     this.service.getUsuario();
   }
-  openEditMode(){
+  openEditMode(sk:Skill){
+    this.comunicacion.actualizarSkill(sk)
+    this.modal.open(ModalSkillComponent)
+  }
+  openAgregarSkill(){
+    this.comunicacion.actualizarPilaSkill(this.skills)
     this.modal.open(ModalSkillComponent)
   }
 }
