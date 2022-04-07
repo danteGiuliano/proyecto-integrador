@@ -17,12 +17,13 @@ import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-exp
 import { ModalEstudioComponent } from './modales/modal-estudio/modal-estudio.component';
 import { ModalBiografiaComponent } from './modales/modal-biografia/modal-biografia.component';
 import { ModalSkillComponent } from './modales/modal-skill/modal-skill.component';
+import { ModalFotoComponent } from './modales/modal-foto/modal-foto.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,ModalEstudioComponent,
-    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent, ModalBiografiaComponent, ModalSkillComponent
+    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent, ModalBiografiaComponent, ModalSkillComponent, ModalFotoComponent
   ],
   imports: [
     BrowserModule,

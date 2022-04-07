@@ -19,6 +19,8 @@ url_logo:""}
   private skill:Skill={
     id:null,nombre:"",porcentaje:0,persona_id:1
   }
+
+  private url_foto:string="";
   constructor() { }
 
   agregarPersona( persona:Persona){
@@ -71,7 +73,12 @@ url_logo:""}
   obtenerPilaSkill():Skill[]{
     return this.skills;
   }
-
+  actualizarUrlFoto(url:string){
+    this.url_foto=url
+  }
+  obtenerUrlFoto():string{
+    return this.url_foto
+  }
 
 
   private limpiarBuffer(){

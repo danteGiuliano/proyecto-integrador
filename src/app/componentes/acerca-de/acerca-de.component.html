@@ -1,8 +1,8 @@
 <div class="row" style="padding: 0;">
   <div class="col s6 m4 l2">
     <div class="image">
-      <img src="../../../assets/avatar.jpg" alt="Avatar" class="avatar">
-      <button class="card-title material-icons bottom-right 
+      <img [src]="url_foto" alt="Avatar" class="avatar">
+      <button (click)="openEditFoto()" class="card-title material-icons bottom-right 
       btn-floating btn-small waves-effect waves-light editBotton">
         <i class="material-icons">edit</i>
       </button>
