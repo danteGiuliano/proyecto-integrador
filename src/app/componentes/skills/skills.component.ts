@@ -12,13 +12,16 @@ import { ComucacionService } from '../../services/comucacion.service';
 })
 export class SkillsComponent implements OnInit {
   public skills:Skill[]=[]
-  constructor(private service:DanterestService,private modal:MatDialog,private comunicacion:ComucacionService) { }
+  constructor(private api:DanterestService,private modal:MatDialog,private comunicacion:ComucacionService) { }
 
   ngOnInit(): void {
-    this.service.getUsuario();
+    this.api.getSkills().subscribe(data=>{
+      this.skills=data;
+    })
   }
   openEditMode(sk:Skill){
     this.comunicacion.actualizarSkill(sk)
+    this.comunicacion.actualizarPilaSkill(this.skills)
     this.modal.open(ModalSkillComponent)
   }
   openAgregarSkill(){

@@ -3,6 +3,8 @@ import { Persona } from '../interfaces/persona';
 import { Experiencia } from '../interfaces/experiencia';
 import { Estudio } from '../interfaces/estudio';
 import { Skill } from '../interfaces/skill';
+import { Foto } from '../interfaces/foto';
+import { DanterestService } from './danterest.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +21,10 @@ url_logo:""}
   private skill:Skill={
     id:null,nombre:"",porcentaje:0,persona_id:1
   }
-
+  private foto:Foto={id:null,url_banner:"",url_perfil:""};
+  private selector:string="perfil"
   private url_foto:string="";
-  constructor() { }
+  constructor(private api:DanterestService) { }
 
   agregarPersona( persona:Persona){
     this.informacion_persona=persona;
@@ -73,14 +76,25 @@ url_logo:""}
   obtenerPilaSkill():Skill[]{
     return this.skills;
   }
-  actualizarUrlFoto(url:string){
-    this.url_foto=url
+  actualizarUrlFoto(tipo:string,url:string){
+    this.selector=tipo;
+    if(this.selector==="perfil"){
+      this.foto.url_perfil=url;
+    }else{
+      this.foto.url_banner=url;
+    }
   }
   obtenerUrlFoto():string{
-    return this.url_foto
+    let retorno:string=this.foto?.url_perfil;
+    if(this.selector===('banner')){
+      retorno=this.foto?.url_banner;
+    }
+    return retorno;
   }
-
-
+  obtenerSelector():string{
+    return this.selector
+  }
+ 
   private limpiarBuffer(){
     this.experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",
     persona_id:1,acerca_trabajo:""}

@@ -18,10 +18,14 @@ export class ExperienciaComponent implements OnInit {
     private comunicacion:ComucacionService) { }
 
   ngOnInit(): void {
+    this.api.getExperiencias().subscribe(data=>{
+      this.esperiencias=data;
+    })
   }
 
   openEditMode(experiencia:Experiencia){
     this.comunicacion.actualizarExperiencia(experiencia);
+    this.comunicacion.actualizarPilaExperiencia(this.esperiencias);
     this.modal.open(ModalExperienciaComponent)
   }
   openAgregarExperiencia(){

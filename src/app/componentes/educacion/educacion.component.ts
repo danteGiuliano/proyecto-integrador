@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalEstudioComponent } from 'src/app/modales/modal-estudio/modal-estudio.component';
 import { Estudio } from 'src/app/interfaces/estudio';
 import { ComucacionService } from '../../services/comucacion.service';
+import { DanterestService } from 'src/app/services/danterest.service';
 
 @Component({
   selector: 'app-educacion',
@@ -11,9 +12,13 @@ import { ComucacionService } from '../../services/comucacion.service';
 })
 export class EducacionComponent implements OnInit {
   public estudios:Estudio[]=[];
-  constructor(private modal:MatDialog,private comunicacion:ComucacionService) { }
+  constructor(private modal:MatDialog,private comunicacion:ComucacionService,
+    private api:DanterestService) { }
 
   ngOnInit(): void {
+    this.api.getEstudios().subscribe((data:Estudio[])=>{
+      this.estudios=data;
+    })
   }
 
   openEditMode(est:Estudio){

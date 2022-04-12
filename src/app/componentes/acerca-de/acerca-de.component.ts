@@ -14,7 +14,7 @@ import { ModalFotoComponent } from '../../modales/modal-foto/modal-foto.componen
 export class AcercaDeComponent implements OnInit {
   public url_foto:string="";
   public persona:Persona ={id:1,nombre:"",apellido:"",acerca_de:"",especialidad:""}
-  constructor(private user:DanterestService,private modal:MatDialog,
+  constructor(private api:DanterestService,private modal:MatDialog,
     private comunicacion:ComucacionService) { 
    
   }
@@ -25,12 +25,15 @@ export class AcercaDeComponent implements OnInit {
 
   ngOnInit():void {
      /*Traigo en un servicio los datos de la persona */
-     this.user.getUsuario().subscribe((resp:Persona)=>{
+     this.api.getUsuario().subscribe((resp:Persona)=>{
       this.persona=resp;
     })
+    this.api.getFoto().subscribe(data=>{
+      this.url_foto=data.url_perfil;
+    })  
   }
   openEditFoto(){
-    this.comunicacion.actualizarUrlFoto(this.url_foto)
+    this.comunicacion.actualizarUrlFoto("perfil",this.url_foto);
     this.modal.open(ModalFotoComponent).afterClosed().subscribe(data=>{
       this.url_foto=data;
     })

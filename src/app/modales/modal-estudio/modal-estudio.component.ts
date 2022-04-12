@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudio } from 'src/app/interfaces/estudio';
+import { DanterestService } from 'src/app/services/danterest.service';
 import { ComucacionService } from '../../services/comucacion.service';
 
 
@@ -12,7 +13,7 @@ import { ComucacionService } from '../../services/comucacion.service';
 export class ModalEstudioComponent implements OnInit {
   public estudio:Estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",url_logo:"",persona_id:1}
   private estudios:Estudio[]=[];
-  constructor(private comunicacion:ComucacionService) {}
+  constructor(private comunicacion:ComucacionService,private api:DanterestService) {}
 
   ngOnInit(): void {
     this.estudio=this.comunicacion.obtenerEstudio();
@@ -24,8 +25,10 @@ export class ModalEstudioComponent implements OnInit {
   }
   private agregarNoRepetido(){
     if(!this.estudios.includes(this.estudio)){
-      this.estudios.push(this.estudio)
+      this.estudios.push(this.estudio) 
     }
+    console.log(this.estudio)
+    this.api.updateEstudio(this.estudio)
   }
 
 }
