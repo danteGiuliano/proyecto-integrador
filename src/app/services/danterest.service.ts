@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import {Persona} from '../interfaces/persona';
+import {Persona,Login} from '../interfaces/persona';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../interfaces/experiencia';
 import { Estudio } from '../interfaces/estudio';
@@ -49,6 +49,8 @@ export class DanterestService {
   getFoto():Observable<Foto>{
     return this.api.get<Foto>(this.url+'obtenerFoto');
   }
- 
-
+  //Login
+  logearServicio(data:Login){
+    return this.api.post(this.url+"iniciarSesion",data).subscribe()
+  }
 }

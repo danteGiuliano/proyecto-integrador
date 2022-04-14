@@ -8,16 +8,16 @@
 
         <div class="form-field">
           <label for="username">Usuario</label>
-          <input type="text">
+          <input [(ngModel)]="sesion.usuarioOEmail" type="text">
         </div><br>
 
         <div class="form-field">
           <label for="username">Password</label>
-          <input type="password" >
+          <input [(ngModel)]="sesion.password" type="password" >
         </div><br>
 
         <div class="form-field center-align">
-         <button class="btn-large waves-effect waves-light blue">Login In</button>
+         <button (click)="logear()" class="btn-large waves-effect waves-light blue">Login In</button>
         </div><br>
 
       </div>

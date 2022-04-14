@@ -5,3 +5,7 @@ export interface Persona {
     especialidad: string;
     acerca_de:    string;
 }
+export interface Login{
+    usuarioOEmail:string
+    password:string
+}
