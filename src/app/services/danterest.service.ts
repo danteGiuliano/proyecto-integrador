@@ -1,26 +1,37 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {Persona,Login} from '../interfaces/persona';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../interfaces/experiencia';
 import { Estudio } from '../interfaces/estudio';
 import { Skill } from '../interfaces/skill';
 import { Foto } from '../interfaces/foto';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class DanterestService {
-  private url:string="http://localhost:8080/";
+  private url:string=environment.URL
+  private token:string=""
   constructor(private api:HttpClient) { }
+
+  getToken(){
+    let tk = localStorage.getItem('token')
+    if(tk!==null){
+      this.token=tk;
+    }
+    return this.token;
+  }
   
   getUsuario():Observable<Persona>{
-  return this.api.get<Persona>(this.url+'persona');
+  return this.api.get<Persona>(this.url+'info-persona');
   }
   uptadeUsuario(persona:Persona){
-  this.api.post(this.url+"agregarPersona",persona).subscribe()
+  this.api.post(this.url+"actualizarPersona",persona).subscribe(data =>this.decoder(data))
   }
+ 
   updateEstudio(estudio:Estudio){
-  this.api.post(this.url+"agregarEstudio",estudio).subscribe()
+  this.api.post(this.url+"agregarEstudio",estudio).subscribe(data =>this.decoder(data))
   }
   getEstudios():Observable<Estudio[]>{
    return this.api.get<Estudio[]>(this.url+'extraerEstudios');
@@ -50,7 +61,19 @@ export class DanterestService {
     return this.api.get<Foto>(this.url+'obtenerFoto');
   }
   //Login
-  logearServicio(data:Login){
-    return this.api.post(this.url+"iniciarSesion",data).subscribe()
+  logearServicio(log:Login){
+    console.log(log)
+    console.log(this.url)
+     this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
+      this.token=data.tokenDeAcceso
+      localStorage.setItem('token',this.token);
+      console.log(localStorage.getItem('token'))
+     })
+  }
+
+  private decoder(data:any){
+      /*  this.token=data.tokenDeAcceso
+       localStorage.setItem('token',this.token);
+       console.log(localStorage.getItem('token'))*/
   }
 }

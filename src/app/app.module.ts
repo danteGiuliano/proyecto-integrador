@@ -11,13 +11,14 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
 import { ModalEstudioComponent } from './modales/modal-estudio/modal-estudio.component';
 import { ModalBiografiaComponent } from './modales/modal-biografia/modal-biografia.component';
 import { ModalSkillComponent } from './modales/modal-skill/modal-skill.component';
 import { ModalFotoComponent } from './modales/modal-foto/modal-foto.component';
+import { InterceptorService } from './services/interceptor.service';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { ModalFotoComponent } from './modales/modal-foto/modal-foto.component';
     BrowserModule,
     BrowserAnimationsModule,MaterializeModule,HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
+  }],
   bootstrap: [AppComponent,ModalEstudioComponent]
 })
 export class AppModule { }

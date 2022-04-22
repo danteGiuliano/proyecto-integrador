@@ -14,6 +14,6 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
   }
   logear(){
-    console.log(this.api.logearServicio(this.sesion))
+    this.api.logearServicio(this.sesion)
   }
 }
