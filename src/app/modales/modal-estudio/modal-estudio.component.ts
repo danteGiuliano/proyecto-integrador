@@ -11,7 +11,7 @@ import { ComucacionService } from '../../services/comucacion.service';
 })
 
 export class ModalEstudioComponent implements OnInit {
-  public estudio:Estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",url_logo:"",persona_id:1}
+  public estudio:Estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",url_logo:""}
   private estudios:Estudio[]=[];
   constructor(private comunicacion:ComucacionService,private api:DanterestService) {}
 
@@ -24,11 +24,11 @@ export class ModalEstudioComponent implements OnInit {
     this.agregarNoRepetido();
   }
   private agregarNoRepetido(){
-    if(!this.estudios.includes(this.estudio)){
-      this.estudios.push(this.estudio) 
-    }
     console.log(this.estudio)
-    this.api.updateEstudio(this.estudio)
+    if(!this.estudios.includes(this.estudio)){
+      this.estudios.push(this.estudio)
+    }
+    this.api.updateEstudio(this.estudio);
   }
 
 }

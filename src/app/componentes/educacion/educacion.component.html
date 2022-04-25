@@ -15,7 +15,7 @@
             <ul class="collection background">
                 <li class="collection-item avatar" *ngFor="let item of estudios">
                     <!-- Boton para editar borrar el componente -->
-                    <button class="card-title material-icons right 
+                    <button (click)="delete(item)" class="card-title material-icons right 
               btn-floating btn-small waves-effect waves-light red">
                         <i class="material-icons">delete</i>
                     </button><br>

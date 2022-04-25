@@ -10,13 +10,14 @@ import { DanterestService } from './danterest.service';
   providedIn: 'root'
 })
 export class ComucacionService {
+  private array:any
+  private obj:any;
   private informacion_persona:Persona|any;
   private lista_experiencia:Experiencia[]|any;
   private estudios:Estudio[]=[];
   private skills:Skill[]=[];
-  private experiencia:Experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",
-  persona_id:1,acerca_trabajo:""}
-  public estudio:Estudio={id:null,titulo:"",persona_id:1,acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",
+  private experiencia:Experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",acerca_trabajo:""}
+  public estudio:Estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",
 url_logo:""}
   private skill:Skill={
     id:null,nombre:"",porcentaje:0,persona_id:1
@@ -94,12 +95,19 @@ url_logo:""}
   obtenerSelector():string{
     return this.selector
   }
+
+  generic(list:any,obj:any){
+   this.obj=obj;
+   this.array=list;
+  }
+  getGeneric(){
+    return  [this.array,this.obj];
+  }
  
   private limpiarBuffer(){
-    this.experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",
-    persona_id:1,acerca_trabajo:""}
+    this.experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",acerca_trabajo:""}
 
-    this.estudio={id:null,persona_id:1,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",
+    this.estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",
     url_logo:""}
 
     this.skill={id:null,persona_id:1,nombre:"",porcentaje:0}

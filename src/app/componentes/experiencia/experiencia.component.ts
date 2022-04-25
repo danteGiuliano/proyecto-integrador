@@ -4,6 +4,7 @@ import { ModalExperienciaComponent } from 'src/app/modales/modal-experiencia/mod
 import { Experiencia } from 'src/app/interfaces/experiencia';
 import { ComucacionService } from 'src/app/services/comucacion.service';
 import { DanterestService } from '../../services/danterest.service';
+import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -35,5 +36,11 @@ export class ExperienciaComponent implements OnInit {
       this.esperiencias.push(data)
     }); */
    
+  }
+  elimnar(experiencia:Experiencia){
+    this.comunicacion.generic(this.esperiencias,experiencia)
+    this.modal.open(EliminarComponent).afterClosed().subscribe((data:Experiencia)=>{
+      this.esperiencias=data
+    })
   }
 }

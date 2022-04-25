@@ -4,5 +4,4 @@ export interface Experiencia {
     url_imagen: string;
     trabajo: string;
     acerca_trabajo:string;
-    persona_id: number;
 }

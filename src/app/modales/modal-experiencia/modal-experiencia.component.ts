@@ -10,8 +10,7 @@ import { Experiencia } from '../../interfaces/experiencia';
   styleUrls: ['./modal-experiencia.component.css']
 })
 export class ModalExperienciaComponent implements OnInit {
-  public experiencia:Experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",
-  persona_id:1,acerca_trabajo:""}
+  public experiencia:Experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",acerca_trabajo:""}
   public stack:Experiencia[]=[];
   constructor(private comunicacion:ComucacionService,private api:DanterestService) { }
 

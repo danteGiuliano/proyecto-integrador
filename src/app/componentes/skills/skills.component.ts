@@ -4,6 +4,7 @@ import { ModalSkillComponent } from 'src/app/modales/modal-skill/modal-skill.com
 import { Skill } from 'src/app/interfaces/skill';
 import { DanterestService } from 'src/app/services/danterest.service';
 import { ComucacionService } from '../../services/comucacion.service';
+import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
 
 @Component({
   selector: 'app-skills',
@@ -27,5 +28,11 @@ export class SkillsComponent implements OnInit {
   openAgregarSkill(){
     this.comunicacion.actualizarPilaSkill(this.skills)
     this.modal.open(ModalSkillComponent)
+  }
+  delete(sk:Skill){
+    this.comunicacion.generic(this.skills,sk)
+    this.modal.open(EliminarComponent).afterClosed().subscribe(data=>{
+      this.skills=data;
+    })
   }
 }

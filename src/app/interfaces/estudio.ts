@@ -6,5 +6,4 @@ export interface Estudio {
     fecha_inicio: string;
     fecha_fin:    string;
     url_logo:     string;
-    persona_id: number;
 }

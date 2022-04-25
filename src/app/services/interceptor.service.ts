@@ -13,7 +13,7 @@ export class InterceptorService implements HttpInterceptor{
     
     
     if(this.validation(req)){
-      var token=this.api.getToken();
+      var token=this.api.getToken()
       req=req.clone({
         setHeaders:{
           "authorization": 'Bearer '+token

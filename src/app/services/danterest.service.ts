@@ -27,11 +27,11 @@ export class DanterestService {
   return this.api.get<Persona>(this.url+'info-persona');
   }
   uptadeUsuario(persona:Persona){
-  this.api.post(this.url+"actualizarPersona",persona).subscribe(data =>this.decoder(data))
-  }
+  this.api.post(this.url+"actualizarPersona",persona).subscribe()
+  } 
  
   updateEstudio(estudio:Estudio){
-  this.api.post(this.url+"agregarEstudio",estudio).subscribe(data =>this.decoder(data))
+  this.api.post(this.url+"agregarEstudio",estudio).subscribe()
   }
   getEstudios():Observable<Estudio[]>{
    return this.api.get<Estudio[]>(this.url+'extraerEstudios');
@@ -65,15 +65,30 @@ export class DanterestService {
     console.log(log)
     console.log(this.url)
      this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
+       console.log(data)
       this.token=data.tokenDeAcceso
       localStorage.setItem('token',this.token);
       console.log(localStorage.getItem('token'))
      })
   }
 
-  private decoder(data:any){
-      /*  this.token=data.tokenDeAcceso
-       localStorage.setItem('token',this.token);
-       console.log(localStorage.getItem('token'))*/
+  /**
+   * Servicio de Eliminar componentnes 
+   * 
+   * 
+   * 
+   */
+
+
+  eliminarExpereriencia(exp:Experiencia){
+    this.api.post(this.url+"eliminarExperiencia",exp).subscribe();
   }
+  eliminarEstudio(est:Estudio){
+    this.api.post(this.url+"eliminarEstudio",est).subscribe();
+  }
+  eliminarSkill(sk:Skill){
+    this.api.post(this.url+"eliminarSkill",sk).subscribe();
+  }
+
+
 }

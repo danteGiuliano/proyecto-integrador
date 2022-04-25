@@ -4,6 +4,7 @@ import { ModalEstudioComponent } from 'src/app/modales/modal-estudio/modal-estud
 import { Estudio } from 'src/app/interfaces/estudio';
 import { ComucacionService } from '../../services/comucacion.service';
 import { DanterestService } from 'src/app/services/danterest.service';
+import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
 
 @Component({
   selector: 'app-educacion',
@@ -29,4 +30,11 @@ export class EducacionComponent implements OnInit {
     this.comunicacion.actualizarPilaEstudio(this.estudios)
     this.modal.open(ModalEstudioComponent)
   }
+  delete(estudio:Estudio){
+    this.comunicacion.generic(this.estudios,estudio)
+    this.modal.open(EliminarComponent).afterClosed().subscribe(data=>{
+      this.estudios=data;
+    })
+  }
+  
 }

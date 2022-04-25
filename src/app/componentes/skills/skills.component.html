@@ -15,6 +15,10 @@
 
         <div class="row ">
             <div class="col s6 m4 l2" *ngFor="let item of skills">
+                <button (click)="delete(item)" class="card-title material-icons right 
+                btn-floating btn-small waves-effect waves-light red" style="margin-left:10px;">
+                    <i class="material-icons">delete</i>
+                </button>
                 <button (click)="openEditMode(item)" class="card-title material-icons right 
                 btn-floating btn-small waves-effect waves-light">
                     <i class="material-icons">edit</i>
