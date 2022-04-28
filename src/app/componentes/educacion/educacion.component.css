@@ -1,7 +1,13 @@
+
+h1{
+    font-family:SquarePeg;
+    font-size: 64px;
+}
+
 .tamaño{
     max-height: 100px;
     max-width: 100px;
 }
 .background{
-    background-color: var(--main-color);
+    background-image:url('../../../assets/images/school.jpg');
 }

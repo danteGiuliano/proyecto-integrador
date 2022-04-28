@@ -5,6 +5,7 @@ import { Persona } from 'src/app/interfaces/persona';
 import { ComucacionService } from 'src/app/services/comucacion.service';
 import { DanterestService } from 'src/app/services/danterest.service';
 import { ModalFotoComponent } from '../../modales/modal-foto/modal-foto.component';
+import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -15,8 +16,11 @@ export class AcercaDeComponent implements OnInit {
   public url_foto:string="";
   public persona:Persona ={id:1,nombre:"",apellido:"",acerca_de:"",especialidad:""}
   constructor(private api:DanterestService,private modal:MatDialog,
-    private comunicacion:ComucacionService) { 
+    private comunicacion:ComucacionService,private au:AutorizacionService) { 
    
+  }
+  autorizado(){
+    return this.au.estaAutorizado()
   }
   openBibliografiaEditMode(){
     this.comunicacion.agregarPersona(this.persona)

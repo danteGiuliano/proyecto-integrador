@@ -1,4 +1,5 @@
 import { Component, OnInit,NgModule } from '@angular/core';
+import { AutorizacionService } from '../services/autorizacion.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,21 +8,11 @@ import { Component, OnInit,NgModule } from '@angular/core';
 })
 
 export class InicioComponent implements OnInit {
-  public value=70;
-  constructor() { 
-
+  constructor(private autenticacion:AutorizacionService) { 
+    this.autenticacion.checkToken();
   }
 
   ngOnInit(): void {
   }
-  formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
 
-    return value;
-  }
-  datepicker(){
-    this.datepicker();
-  }
 }

@@ -22,6 +22,7 @@ import { InterceptorService } from './services/interceptor.service';
 import { EliminarComponent } from './modales/eliminar/eliminar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,ModalEstudioComponent,

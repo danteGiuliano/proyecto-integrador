@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="center-align" style=" text-transform: uppercase ;margin:0; text-decoration: underline">
-    <h1>Experiencias</h1> 
-    <button (click)="openAgregarExperiencia()" class="card-title material-icons right 
+  <div class="center-align">
+    <h1><mat-icon>work_history</mat-icon> Experiencias <mat-icon>work</mat-icon></h1> 
+    <button *ngIf="autorizado()" (click)="openAgregarExperiencia()" class="card-title material-icons right 
     btn-floating btn-large waves-effect waves-light blue">
     <i class="material-icons">add</i>
     </button><br>
@@ -22,12 +22,12 @@
             <div class="card-content">
 
               <!-- Boton para editar borrar el componente -->
-              <button (click)="elimnar(item)" class="card-title material-icons right 
+              <button *ngIf="autorizado()" (click)="elimnar(item)" class="card-title material-icons right 
                       btn-floating btn-large waves-effect waves-light red">
                 <i class="material-icons">delete</i>
               </button><br>
 
-              <button (click)=openEditMode(item) class="card-title material-icons right 
+              <button *ngIf="autorizado()" (click)=openEditMode(item) class="card-title material-icons right 
                        btn-floating btn-large waves-effect waves-light">
                 <i class="material-icons">edit</i>
               </button>

@@ -5,6 +5,8 @@ import { Estudio } from 'src/app/interfaces/estudio';
 import { ComucacionService } from '../../services/comucacion.service';
 import { DanterestService } from 'src/app/services/danterest.service';
 import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
+import { AutorizacionService } from '../../services/autorizacion.service';
+
 
 @Component({
   selector: 'app-educacion',
@@ -14,12 +16,16 @@ import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
 export class EducacionComponent implements OnInit {
   public estudios:Estudio[]=[];
   constructor(private modal:MatDialog,private comunicacion:ComucacionService,
-    private api:DanterestService) { }
-
+    private api:DanterestService,private au:AutorizacionService) {
+     }
+    
   ngOnInit(): void {
     this.api.getEstudios().subscribe((data:Estudio[])=>{
       this.estudios=data;
     })
+  }
+  autorizado(){
+    return this.au.estaAutorizado()
   }
 
   openEditMode(est:Estudio){

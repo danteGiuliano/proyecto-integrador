@@ -5,6 +5,7 @@ import { Experiencia } from 'src/app/interfaces/experiencia';
 import { ComucacionService } from 'src/app/services/comucacion.service';
 import { DanterestService } from '../../services/danterest.service';
 import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
+import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,11 +13,15 @@ import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-
   public esperiencias:Experiencia[]|any=[]
   
   constructor(private modal:MatDialog,private api:DanterestService,
-    private comunicacion:ComucacionService) { }
+    private comunicacion:ComucacionService,private au:AutorizacionService) {
+     }
+
+     autorizado(){
+       return this.au.estaAutorizado()
+     }
 
   ngOnInit(): void {
     this.api.getExperiencias().subscribe(data=>{

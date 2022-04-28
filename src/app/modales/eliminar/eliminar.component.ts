@@ -25,9 +25,11 @@ export class EliminarComponent implements OnInit {
 
    delete() {
      this.deleteWithApi(this.component)
+     console.log( "tipo" +this.component.kind)
     return this.list.filter(item=>{return item.id!==this.component.id})
   }
   private deleteWithApi(comp:any){
+    console.log(comp.kind)
     this.api.eliminarExpereriencia(comp)
     this.api.eliminarEstudio(comp)
     this.api.eliminarSkill(comp)

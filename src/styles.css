@@ -9,3 +9,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 0 !important;
     box-shadow:none;
 }
+@font-face {
+    font-family: "SquarePeg";
+    src: local("SquarePeg"), url(./assets/fonts/SquarePeg-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Anton";
+    src: local("Anton"), url(./assets/fonts/Anton-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "BebasNeue-Regular";
+    src: local("BebasNeue-Regular"), url(./assets/fonts/BebasNeue-Regular.ttf) format("truetype");
+}

@@ -55,7 +55,9 @@ class library{
       "outerStrokeWidth": 10,
       "innerStrokeWidth": 5,
       "showBackground": false,
-      "startFromZero": false
+      "startFromZero": false,
+      "subtitleColor":"#841515",
+      "subtitleFontWeight":"400"
     })
   ],exports:[
     library.returnImport()

@@ -1,39 +1,42 @@
-<div class="container">
-    <div class="center-align" style=" text-transform: uppercase ;margin:0; text-decoration: underline">
-        <h1>Educacion</h1>
-        <button (click)="openAgregarEstudio()" class="card-title material-icons right 
+<div class="container" >
+    <div class="center-align estudio">
+        <h1>Educacion <mat-icon>school</mat-icon> </h1>
+        <button *ngIf="autorizado()" (click)="openAgregarEstudio()" class="card-title material-icons right 
         btn-floating btn-large waves-effect waves-light blue">
         <i class="material-icons">add</i>
         </button><br>
         <hr>
     </div>
-</div>
 
-<div class="blue-grey darken-1" style="padding-top:1%;">
-    <div class="container">
-        <div class="row">
-            <ul class="collection background">
-                <li class="collection-item avatar" *ngFor="let item of estudios">
-                    <!-- Boton para editar borrar el componente -->
-                    <button (click)="delete(item)" class="card-title material-icons right 
-              btn-floating btn-small waves-effect waves-light red">
-                        <i class="material-icons">delete</i>
-                    </button><br>
 
-                    <button (click)="openEditMode(item)" class="card-title material-icons right 
-               btn-floating btn-small waves-effect waves-light">
-                        <i class="material-icons">edit</i>
-                    </button>
-
-                    <img src="../../../assets/sinfoto.jpg" alt="" class="circle">
-                    <span class="title">{{item.titulo}}</span>
-                    <p>{{item.institucion}} | {{item.fecha_inicio}} - {{item.fecha_fin}} <br>
-                        {{item.acerca_de}}
-                    </p>
-                    <a href="#!" class="secondary-content"></a>
-                </li>
-            </ul>
+    <div class="background " style="padding-top:1%;">
+        <div class="container">
+            <div class="row">
+                <ul class="collection background">
+                    <li class="collection-item avatar" *ngFor="let item of estudios">
+                        <!-- Boton para editar borrar el componente -->
+                        <button *ngIf="autorizado()" (click)="delete(item)" class="card-title material-icons right 
+                  btn-floating btn-small waves-effect waves-light red">
+                            <i class="material-icons">delete</i>
+                        </button><br>
+    
+                        <button *ngIf="autorizado()" (click)="openEditMode(item)" class="card-title material-icons right 
+                   btn-floating btn-small waves-effect waves-light">
+                            <i class="material-icons">edit</i>
+                        </button>
+    
+                        <img src="{{item.url_logo}}" alt="" class="circle">
+                        <span class="title">{{item.titulo}}</span>
+                        <p>{{item.institucion}} | {{item.fecha_inicio}} - {{item.fecha_fin}} <br>
+                            {{item.acerca_de}}
+                        </p>
+                        <a href="#!" class="secondary-content"></a>
+                    </li>
+                </ul>
+            </div>
         </div>
+      
     </div>
-  
+
+
 </div>

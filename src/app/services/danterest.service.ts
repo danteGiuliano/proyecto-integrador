@@ -7,13 +7,14 @@ import { Estudio } from '../interfaces/estudio';
 import { Skill } from '../interfaces/skill';
 import { Foto } from '../interfaces/foto';
 import { environment } from 'src/environments/environment';
+import { AutorizacionService } from './autorizacion.service';
 @Injectable({
   providedIn: 'root'
 })
 export class DanterestService {
   private url:string=environment.URL
   private token:string=""
-  constructor(private api:HttpClient) { }
+  constructor(private api:HttpClient, private autorizacion:AutorizacionService) { }
 
   getToken(){
     let tk = localStorage.getItem('token')
@@ -62,15 +63,15 @@ export class DanterestService {
   }
   //Login
   logearServicio(log:Login){
-    console.log(log)
-    console.log(this.url)
-     this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
-       console.log(data)
+    this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
+      console.log(data)
       this.token=data.tokenDeAcceso
       localStorage.setItem('token',this.token);
-      console.log(localStorage.getItem('token'))
-     })
+      this.autorizacion.modoEdicion();
+      
+    })
   }
+
 
   /**
    * Servicio de Eliminar componentnes 

@@ -1,0 +1,12 @@
+h1{
+    font-family: BebasNeue-Regular;
+    font-size: 64px;
+}
+.background{
+    background-image:url('../../../assets/images/skill.jpg');
+}
+.box{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}

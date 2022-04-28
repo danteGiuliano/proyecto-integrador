@@ -5,6 +5,7 @@ import { Skill } from 'src/app/interfaces/skill';
 import { DanterestService } from 'src/app/services/danterest.service';
 import { ComucacionService } from '../../services/comucacion.service';
 import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
+import { AutorizacionService } from '../../services/autorizacion.service';
 
 @Component({
   selector: 'app-skills',
@@ -13,12 +14,16 @@ import { EliminarComponent } from '../../modales/eliminar/eliminar.component';
 })
 export class SkillsComponent implements OnInit {
   public skills:Skill[]=[]
-  constructor(private api:DanterestService,private modal:MatDialog,private comunicacion:ComucacionService) { }
+  constructor(private api:DanterestService,
+    private au:AutorizacionService, private modal:MatDialog,private comunicacion:ComucacionService) { }
 
   ngOnInit(): void {
     this.api.getSkills().subscribe(data=>{
       this.skills=data;
     })
+  }
+  autorizado(){
+    return this.au.estaAutorizado()
   }
   openEditMode(sk:Skill){
     this.comunicacion.actualizarSkill(sk)

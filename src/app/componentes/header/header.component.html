@@ -1,13 +1,22 @@
 <nav>
-    <div class="nav-wrapper blue-grey darken-1">
+  <div class="nav-wrapper blue-grey darken-1">
+    <a href="#" id="nav-mobile" class="brand-logo left">
+      Argentina Programa
+    </a>
+    <ul id="nav-mobile" class="bottom right">
+      <li><button *ngIf="autorizado()" (click)="logout()" mat-icon-button class="hoverable">
+          <mat-icon>logout</mat-icon>
+        </button></li>
+      <li><button (click)="redirigir('https://www.linkedin.com/in/dantegiuliano/')" mat-icon-button class="hoverable">
+          <mat-icon svgIcon="linkedin"></mat-icon>
+        </button></li>
+      <li><button (click)="redirigir('https://github.com/danteGiuliano')" mat-icon-button class="hoverable">
+          <mat-icon svgIcon="github"></mat-icon>
+        </button></li>
+      <li><button (click)="open()" mat-icon-button class="hoverable">
+          <mat-icon>supervisor_account</mat-icon>
+        </button></li>
+    </ul>
 
-      <a href="#" id="nav-mobile" class="brand-logo left">
-        Argentina Programa</a>
-      <ul id="nav-mobile" class="bottom right">
-          <li><button mat-icon-button class="hoverable"><mat-icon svgIcon="linkedin"></mat-icon></button></li>
-          <li><button (click)="editar()" mat-icon-button class="hoverable"><mat-icon svgIcon="github"></mat-icon></button></li>
-          <li><button (click)="open()"  mat-icon-button class="hoverable"><mat-icon>supervisor_account</mat-icon></button></li>
-      </ul>
-      
-    </div>
-  </nav>
+  </div>
+</nav>
