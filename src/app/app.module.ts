@@ -20,13 +20,14 @@ import { ModalSkillComponent } from './modales/modal-skill/modal-skill.component
 import { ModalFotoComponent } from './modales/modal-foto/modal-foto.component';
 import { InterceptorService } from './services/interceptor.service';
 import { EliminarComponent } from './modales/eliminar/eliminar.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,ModalEstudioComponent,
-    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent, ModalBiografiaComponent, ModalSkillComponent, ModalFotoComponent, EliminarComponent
+    HeaderComponent,InicioComponent, BannerComponent, AcercaDeComponent, ExperienciaComponent, EducacionComponent, SkillsComponent, LoginComponent, ModalExperienciaComponent, ModalBiografiaComponent, ModalSkillComponent, ModalFotoComponent, EliminarComponent, ProyectosComponent
   ],
   imports: [
     BrowserModule,
