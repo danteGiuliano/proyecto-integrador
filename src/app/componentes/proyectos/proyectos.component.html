@@ -1,42 +1,53 @@
-<div class="background" style="padding:2%;">
-    <div class="title">
-        <h1>
-            Titulo de proyecto
-        </h1>
-        
-    </div>
 
-    <button   class="card-title material-icons right 
-        btn-floating btn-large waves-effect waves-light red">
-    <i class="material-icons">delete</i>
+<div class="container center-align">
+    <h1>Proyectos <mat-icon>school</mat-icon></h1>
+    <button *ngIf="autorizado()" (click)="openAgregarProyecto()" class="card-title material-icons right 
+    btn-floating btn-large waves-effect waves-light blue">
+    <i class="material-icons">add</i>
     </button><br>
-    <button  class="card-title material-icons right
-         btn-floating btn-large waves-effect waves-light">
-    <i class="material-icons">edit</i>
-    </button>
+</div>
 
-    <div class="body">
-        <div class="box-image">
-            <img class="img" src="../../../assets/sinfoto.jpg"  alt="">
+
+
+<div class="background" style="padding:2%;">
+    
+    <div *ngFor="let item of proyectos">
+        <div class="title">
+            <h1>
+                {{item.titulo}}
+            </h1>
+
         </div>
-        <div class="box-descripcion">
-            <div class="title-descripcion">
-                <h2>Breve descripcion</h2>
-            </div><br>
-            <div class="p-descripcion">
-                <p>
-                    Diseño , desarrollo e implementacion de una pagina interactiva
-                    tipo porfolio
-                </p>
+        <button *ngIf="autorizado()" (click)="delete(item)" class="card-title material-icons right 
+            btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">delete</i>
+        </button><br>
+        <button *ngIf="autorizado()" (click)="edit_proyecto(item)" class="card-title material-icons right
+             btn-floating btn-large waves-effect waves-light">
+            <i class="material-icons">edit</i>
+        </button>
+
+        <div class="body">
+            <div class="box-image">
+                <img class="img" src={{item.url_imagen}} alt="">
             </div>
-            
-            <br>
-            <footer>
-                <button class="btn-large waves-effect waves-light blue">Ir al sitio</button>
-            </footer>
-            
-        </div>
+            <div class="box-descripcion">
+                <div class="title-descripcion">
+                    <h2>{{item.subtitulo}}</h2>
+                </div><br>
+                <div class="p-descripcion">
+                    <p>
+                        {{item.acerca_proyecto}}
+                    </p>
+                </div>
 
+                <br>
+                <footer>
+                    <button (click)="redirigir(item.ir_sitio)" class="btn-large waves-effect waves-light blue">Ir al sitio</button>
+                </footer>
+
+            </div>
+        </div><br>
 
     </div>
 

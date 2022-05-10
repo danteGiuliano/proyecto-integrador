@@ -8,6 +8,7 @@ import { Skill } from '../interfaces/skill';
 import { Foto } from '../interfaces/foto';
 import { environment } from 'src/environments/environment';
 import { AutorizacionService } from './autorizacion.service';
+import { Proyecto } from '../interfaces/proyecto';
 @Injectable({
   providedIn: 'root'
 })
@@ -49,6 +50,12 @@ export class DanterestService {
   getExperiencias():Observable<Experiencia[]>{
     return this.api.get<Experiencia[]>(this.url+'extraerExperiencias')
   }
+   updateProyecto(proyecto:Proyecto){
+    this.api.post(this.url+'agregarProyecto',proyecto).subscribe();
+  }
+  getproyectos():Observable<Proyecto[]>{
+    return this.api.get<Proyecto[]>(this.url+'extraerProyectos')
+  }
   getUrl_perfil():Observable<string>{
     return this.api.get<string>(this.url+'extraerFotoPerfil');
   }
@@ -73,6 +80,7 @@ export class DanterestService {
   }
 
 
+
   /**
    * Servicio de Eliminar componentnes 
    * 
@@ -89,6 +97,9 @@ export class DanterestService {
   }
   eliminarSkill(sk:Skill){
     this.api.post(this.url+"eliminarSkill",sk).subscribe();
+  }
+  eliminarProyecto(pr:Proyecto){
+    this.api.post(this.url+"eliminarProyecto",pr).subscribe();
   }
 
 

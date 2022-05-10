@@ -5,6 +5,7 @@ import { Estudio } from '../interfaces/estudio';
 import { Skill } from '../interfaces/skill';
 import { Foto } from '../interfaces/foto';
 import { DanterestService } from './danterest.service';
+import { Proyecto } from '../interfaces/proyecto';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,11 @@ export class ComucacionService {
   private experiencia:Experiencia={id:null,trabajo:"",url_imagen:"",nombre_empresa:"",acerca_trabajo:""}
   public estudio:Estudio={id:null,titulo:"",acerca_de:"",institucion:"",fecha_fin:"",fecha_inicio:"",
 url_logo:""}
+
+
+  private proyecto:Proyecto={id:null,titulo:"",subtitulo:"",acerca_proyecto:"",url_imagen:"",ir_sitio:""}
+  private proyectos:Proyecto[]=[]
+
   private skill:Skill={
     id:null,nombre:"",porcentaje:0,persona_id:1
   }
@@ -62,7 +68,21 @@ url_logo:""}
   actualizarPilaEstudio(estudio:Estudio[]){
     this.estudios=estudio;
   }
-
+  actualizarPilaProyecto(proyectos:Proyecto[]){
+    this.proyectos=proyectos;
+  }
+  obtenerPilaProyecto(){
+    return this.proyectos;
+  }
+  actualizarProyecto(proyecto:Proyecto){
+    this.proyecto=proyecto;
+  }
+  obtenerProyecto(){
+    let aux=this.proyecto;
+    this.limpiarBuffer();
+    return aux;
+  }
+  
   actualizarSkill(sk:Skill){
     this.skill=sk;
   }
@@ -85,6 +105,7 @@ url_logo:""}
       this.foto.url_banner=url;
     }
   }
+
   obtenerUrlFoto():string{
     let retorno:string=this.foto?.url_perfil;
     if(this.selector===('banner')){
@@ -111,5 +132,6 @@ url_logo:""}
     url_logo:""}
 
     this.skill={id:null,persona_id:1,nombre:"",porcentaje:0}
+    this.proyecto={id:null,titulo:"",subtitulo:"",acerca_proyecto:"",url_imagen:"",ir_sitio:""}
   }
 }

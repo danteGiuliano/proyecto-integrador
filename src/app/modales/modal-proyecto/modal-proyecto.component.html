@@ -1,0 +1,40 @@
+<div class="row" >
+    <div class="col offset-14">
+      <div class="card" id="contenedor">
+        <div class="card-content">
+
+            <div class="input-field">
+                <input [(ngModel)]="proyecto.titulo" id="first_name" type="text" class="validate">
+                <label for="first_name">Titulo de proyecto</label>
+              </div><br>
+
+          <div class="input-field">
+            <input [(ngModel)]="proyecto.subtitulo" id="first_name" type="text" class="validate">
+            <label for="first_name">Subtitulo de proyecto</label>
+          </div><br>
+  
+          <div class="input-field">
+            <textarea [(ngModel)]="proyecto.acerca_proyecto" id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Descripcion del proyecto</label>
+          </div><br>
+
+          <div class="input-field">
+            <input [(ngModel)]="proyecto.url_imagen" id="first_name" type="text" class="validate">
+            <label for="first_name">URL logo proyecto</label>
+          </div><br>
+
+          <div class="input-field">
+            <input [(ngModel)]="proyecto.ir_sitio" id="first_name" type="text" class="validate">
+            <label for="first_name">URL sitio</label>
+          </div><br>
+        
+  
+          <div class="form-field center-align">
+           <button [mat-dialog-close] (click)="guardarInformacion()"
+           class="btn-large waves-effect waves-light blue">Guardar cambios</button>
+          </div><br>
+  
+        </div>
+      </div>
+    </div>
+  </div>
