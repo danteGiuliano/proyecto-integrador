@@ -8,4 +8,3 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'proyectoFinal';
 }
-//"./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
