@@ -6,7 +6,7 @@ import { Experiencia } from '../interfaces/experiencia';
 import { Estudio } from '../interfaces/estudio';
 import { Skill } from '../interfaces/skill';
 import { Foto } from '../interfaces/foto';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { AutorizacionService } from './autorizacion.service';
 import { Proyecto } from '../interfaces/proyecto';
 @Injectable({
