@@ -27,9 +27,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 //Forms , los datePickers no funcionan sin ellos 
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
 
 
@@ -37,7 +37,7 @@ import {MatInputModule} from '@angular/material/input';
 
 class library{
  static returnImport(){
-  return [MatToolbarModule,MatDatepickerModule,MatFormFieldModule,MatNativeDateModule,
+  return [MatToolbarModule,MatDatepickerModule,MatFormFieldModule,
     MatIconModule,MatSliderModule,BrowserModule,MatInputModule,
     MatProgressSpinnerModule,
     FormsModule,MatButtonModule,MatGridListModule,MatCardModule
@@ -45,6 +45,21 @@ class library{
  }
 
 }
+
+
+
+export const DateFormat = {
+  parse: {
+  dateInput: 'input',
+  },
+ display: {
+ dateInput: 'MM/DD/YYYY',
+ monthYearLabel: 'MMMM YYYY',
+ dateA11yLabel: 'MM/DD/YYYY',
+ monthYearA11yLabel: 'MMMM YYYY',
+ }
+ };
+
  
 @NgModule({
   declarations: [],
@@ -61,6 +76,9 @@ class library{
     })
   ],exports:[
     library.returnImport()
+  ],providers:[
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+  { provide: MAT_DATE_FORMATS, useValue: DateFormat }
   ]
 })
 export class MaterializeModule {}

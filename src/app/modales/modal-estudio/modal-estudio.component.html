@@ -15,8 +15,8 @@
               <div class="col">
                 <mat-form-field appearance="fill">
                   <mat-label>Fecha de inicio</mat-label>
-                  <input [(ngModel)]="estudio.fecha_inicio" matInput [matDatepicker]="picker">
-                  <mat-datepicker-toggle date="yyyy" matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <input [(ngModel)]="estudio.fecha_inicio"  matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               </div>
