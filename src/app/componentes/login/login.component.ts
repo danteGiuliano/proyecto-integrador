@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from 'src/app/interfaces/persona';
 import { DanterestService } from '../../services/danterest.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +14,8 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
   }
   logear(){
-    this.api.logearServicio(this.sesion)
-    location.reload()
+     this.api.logearServicio(this.sesion)  
   }
+
 
 }

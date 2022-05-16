@@ -1,7 +1,9 @@
 * {
     color: rgba(0, 0, 0, 0.842)
 }
-
+.background {
+    background-image: url('../../../assets/images/proyectos.jpg');
+}
 
 h1 {
    

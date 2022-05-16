@@ -69,12 +69,12 @@ export class DanterestService {
     return this.api.get<Foto>(this.url+'obtenerFoto');
   }
   //Login
-  logearServicio(log:Login){
-    this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
-      console.log(data)
+   logearServicio(log:Login){
+    return this.api.post(this.url+"iniciarSesion",log).subscribe((data:any)=>{
       this.token=data.tokenDeAcceso
       localStorage.setItem('token',this.token);
       this.autorizacion.modoEdicion();
+      location.reload()
       
     })
   }

@@ -8,3 +8,6 @@ h1{
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
 }
+.background{
+    background-image:url('../../../assets/images/skill.jpg');
+}

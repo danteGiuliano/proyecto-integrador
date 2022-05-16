@@ -31,10 +31,8 @@ export class AutorizacionService {
   checkToken(){
     this.api.post(this.url+"tokenValido",localStorage.getItem('sesion')).subscribe(data=>{
       if(typeof(data)==='boolean'&& data){
-        console.log(data)
         this.modoEdicion()
         this.autorizado=true;
-
       }else{
         localStorage.clear()
       }
